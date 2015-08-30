@@ -9,12 +9,15 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "assemble": "^0.6.0-beta.3",
     "browser-sync": "^2.8.2",
     "del": "^1.2.1",
     "eslint-config-makotot": "0.0.1",
     "gulp": "^3.9.0",
+    "gulp-assemble": "^0.3.2",
     "gulp-ejs": "^1.1.1",
     "gulp-eslint": "^1.0.0",
+    "gulp-extname": "^0.2.0",
     "gulp-sass": "^2.0.4",
     "run-sequence": "^1.1.2"
   }

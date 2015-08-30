@@ -39,3 +39,5 @@ build/Release
 node_modules
 
 
+dev/
+build/
