@@ -48,6 +48,23 @@ module.exports = function (grunt) {
       }
     },
 
+    sass: {
+      options: {
+        sourceMap: true
+      },
+      all: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= path.src %>/scss',
+            src: ['*.scss'],
+            dest: '<%= path.dist %>/css',
+            ext: '.css'
+          }
+        ]
+      }
+    },
+
     watch: {
       options: {
         spawn: false
@@ -55,7 +72,11 @@ module.exports = function (grunt) {
       html: {
         files: ['<%= path.src %>/**/*.hbs'],
         tasks: ['assemble']
-      }
+      },
+      sass: {
+        files: ['<%= path.src %>/scss/**/*.scss'],
+        tasks: ['sass']
+      },
     },
 
     browserSync: {
@@ -67,7 +88,8 @@ module.exports = function (grunt) {
         },
         bsFiles: {
           src: [
-            '<%= path.dist %>/**/*.html'
+            '<%= path.dist %>/**/*.html',
+            '<%= path.dist %>/css/*.css'
           ]
         }
       }
@@ -77,5 +99,5 @@ module.exports = function (grunt) {
 
 
   grunt.registerTask('default', ['eslint', 'clean']);
-  grunt.registerTask('serve', ['eslint', 'clean', 'assemble', 'browserSync', 'watch']);
+  grunt.registerTask('serve', ['eslint', 'clean', 'assemble', 'sass', 'browserSync', 'watch']);
 };
