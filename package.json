@@ -10,7 +10,9 @@
   "license": "MIT",
   "devDependencies": {
     "assemble": "^0.6.0-beta.3",
+    "autoprefixer": "^6.0.3",
     "browser-sync": "^2.8.2",
+    "cssnano": "^3.2.0",
     "del": "^1.2.1",
     "eslint-config-makotot": "0.0.1",
     "grunt": "^0.4.5",
@@ -20,6 +22,7 @@
     "grunt-contrib-copy": "^0.8.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-eslint": "^17.2.0",
+    "grunt-postcss": "^0.6.0",
     "grunt-sass": "^1.1.0-beta",
     "gulp": "^3.9.0",
     "gulp-assemble": "^0.3.2",
