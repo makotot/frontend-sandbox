@@ -99,5 +99,9 @@ module.exports = function (grunt) {
 
 
   grunt.registerTask('default', ['eslint', 'clean']);
+
   grunt.registerTask('serve', ['eslint', 'clean', 'assemble', 'sass', 'browserSync', 'watch']);
+
+  grunt.registerTask('build', ['eslint', 'clean', 'assemble', 'sass']);
+
 };
