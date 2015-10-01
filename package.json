@@ -31,6 +31,7 @@
     "gulp-extname": "^0.2.0",
     "gulp-sass": "^2.0.4",
     "jit-grunt": "^0.9.1",
+    "rucksack-css": "^0.8.2",
     "run-sequence": "^1.1.2",
     "time-grunt": "^1.2.1"
   }
