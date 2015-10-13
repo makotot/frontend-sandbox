@@ -14,7 +14,7 @@ module.exports = function (grunt) {
     },
 
     eslint: {
-      target: ['*.js']
+      target: ['./src/js/**/*.js']
     },
 
     clean: {
@@ -65,6 +65,19 @@ module.exports = function (grunt) {
       }
     },
 
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer')(),
+          require('cssnano')()
+        ]
+      },
+      dist: {
+        src: '<%= path.dist %>/css/*.css'
+      }
+    },
+
     browserify: {
       dist: {
         options: {
@@ -95,6 +108,10 @@ module.exports = function (grunt) {
         files: ['<%= path.src %>/scss/**/*.scss'],
         tasks: ['sass']
       },
+      postcss: {
+        files: ['<%= path.dist %>/css/**/*.css'],
+        tasks: ['postcss']
+      },
       js: {
         files: ['<%= path.src %>/js/**/*.js'],
         tasks: ['browserify']
@@ -111,7 +128,8 @@ module.exports = function (grunt) {
         bsFiles: {
           src: [
             '<%= path.dist %>/**/*.html',
-            '<%= path.dist %>/css/*.css'
+            '<%= path.dist %>/css/*.css',
+            '<%= path.dist %>/js/*.js'
           ]
         }
       }
@@ -122,8 +140,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', ['eslint', 'clean']);
 
-  grunt.registerTask('serve', ['eslint', 'clean', 'assemble', 'sass', 'browserify', 'browserSync', 'watch']);
+  grunt.registerTask('serve', ['eslint', 'clean', 'assemble', 'sass', 'postcss', 'browserify', 'browserSync', 'watch']);
 
-  grunt.registerTask('build', ['eslint', 'clean', 'assemble', 'sass', 'browserify']);
+  grunt.registerTask('build', ['eslint', 'clean', 'assemble', 'sass', 'postcss', 'browserify']);
 
 };
