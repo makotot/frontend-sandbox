@@ -3,6 +3,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>{{title}}</title>
+
+		{{# styles }}
+		<link rel="stylesheet" href="./css/{{ . }}.css">
+		{{/ styles }}
+
 	</head>
 	<body>
 		{{> header }}
@@ -10,5 +15,9 @@
 		{{> body }}
 
 		{{> footer }}
+
+		{{# scripts }}
+		<script src="./js/{{ . }}.js"></script>
+		{{/ scripts }}
 	</body>
 </html>

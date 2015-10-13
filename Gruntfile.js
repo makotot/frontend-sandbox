@@ -65,6 +65,24 @@ module.exports = function (grunt) {
       }
     },
 
+    browserify: {
+      dist: {
+        options: {
+          transform: [
+            ['babelify']
+          ]
+        },
+        files: [
+          {
+            expand: true,
+            cwd: '<%= path.src %>/js',
+            src: ['*.js'],
+            dest: '<%= path.dist %>/js'
+          }
+        ]
+      }
+    },
+
     watch: {
       options: {
         spawn: false
@@ -77,6 +95,10 @@ module.exports = function (grunt) {
         files: ['<%= path.src %>/scss/**/*.scss'],
         tasks: ['sass']
       },
+      js: {
+        files: ['<%= path.src %>/js/**/*.js'],
+        tasks: ['browserify']
+      }
     },
 
     browserSync: {
@@ -100,8 +122,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', ['eslint', 'clean']);
 
-  grunt.registerTask('serve', ['eslint', 'clean', 'assemble', 'sass', 'browserSync', 'watch']);
+  grunt.registerTask('serve', ['eslint', 'clean', 'assemble', 'sass', 'browserify', 'browserSync', 'watch']);
 
-  grunt.registerTask('build', ['eslint', 'clean', 'assemble', 'sass']);
+  grunt.registerTask('build', ['eslint', 'clean', 'assemble', 'sass', 'browserify']);
 
 };
