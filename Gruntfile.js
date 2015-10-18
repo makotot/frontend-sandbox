@@ -70,7 +70,9 @@ module.exports = function (grunt) {
         map: true,
         processors: [
           require('autoprefixer')(),
-          require('cssnano')()
+          require('stylelint')(),
+          require('cssnano')(),
+          require('postcss-reporter')
         ]
       },
       dist: {
