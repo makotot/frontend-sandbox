@@ -37,6 +37,7 @@
     "rucksack-css": "^0.8.5",
     "run-sequence": "^1.1.2",
     "stylelint": "^2.0.0",
+    "stylelint-config-makotot": "0.0.2",
     "time-grunt": "^1.2.2"
   }
 }
