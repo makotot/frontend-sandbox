@@ -1,6 +1,5 @@
 {
   "extends": "stylelint-config-makotot",
   "rules": {
-    "no-multiple-empty-lines": [2]
   }
 }
