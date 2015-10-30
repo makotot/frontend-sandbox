@@ -39,5 +39,6 @@
     "stylelint": "^2.0.0",
     "stylelint-config-makotot": "0.0.2",
     "time-grunt": "^1.2.2"
-  }
+  },
+  "dependencies": {}
 }
