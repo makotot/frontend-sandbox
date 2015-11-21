@@ -69,6 +69,7 @@ module.exports = function (grunt) {
       options: {
         map: true,
         processors: [
+          require('postcss-normalize')(),
           require('autoprefixer')(),
           require('stylelint')(),
           require('cssnano')(),
