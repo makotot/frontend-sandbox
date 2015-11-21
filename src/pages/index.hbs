@@ -1,4 +1,12 @@
 ---
 title: index
 ---
-<div></div>
+<ul>
+
+{{# each pages }}
+	<li>
+		<a href="{{ this.relativeLink }}">{{ this.data.title }}</a>
+	</li>
+{{/ each }}
+
+</ul>

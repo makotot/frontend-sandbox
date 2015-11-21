@@ -70,6 +70,7 @@ module.exports = function (grunt) {
         map: true,
         processors: [
           require('postcss-normalize')(),
+          require('rucksack-css')(),
           require('autoprefixer')(),
           require('stylelint')(),
           require('cssnano')(),
