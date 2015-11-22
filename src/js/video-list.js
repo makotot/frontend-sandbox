@@ -20,8 +20,9 @@ document.querySelector('#form').addEventListener('submit', function (e) {
         return item.id.videoId;
       });
 
-      window.player.cuePlaylist(list);
-      console.log(list)
+      window.player.loadPlaylist(list, 0);
+      window.player.setLoop(true);
+      console.log(window.player, list)
     })
 });
 
