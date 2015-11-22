@@ -15,7 +15,13 @@ document.querySelector('#form').addEventListener('submit', function (e) {
     })
     .then(function (data) {
       console.log(data.items[0].id.videoId)
-      window.player.loadVideoById(data.items[0].id.videoId)
+      //window.player.loadVideoById(data.items[0].id.videoId)
+      var list = data.items.map(function (item) {
+        return item.id.videoId;
+      });
+
+      window.player.cuePlaylist(list);
+      console.log(list)
     })
 });
 
@@ -23,7 +29,7 @@ window.player;
 
 window.onYouTubeIframeAPIReady = function () {
   window.player = new YT.Player('player', {
-    videoId: 'M7lc1UVf-VE',
+    videoId: '',
     width: 300,
     height: 200,
     events: {
